@@ -66,3 +66,125 @@ END;
 --DROP TRIGGER TR_SEQ_PRONTUARIO; 
 --DROP SEQUENCE PRONTUARIO_ID_SEQ; 
 --DROP TABLE PRONTUARIO; 
+
+
+
+
+
+PROCEDURES, FUNCTIONS E TRIGGERS
+
+VALIDAÇÃO DO CPF DO PACIENTE.
+
+CREATE OR REPLACE TRIGGER tr_cpf_paciente
+BEFORE INSERT OR UPDATE ON paciente
+FOR EACH ROW
+BEGIN
+  
+  :NEW.cpf := REPLACE(REPLACE(:NEW.cpf, '.', ''), '-');
+
+  IF LENGTH(:NEW.cpf) < 11 OR LENGTH(:NEW.cpf) > 14 THEN
+    RAISE_APPLICATION_ERROR(-20200, 'O CPF deve conter de 11 a 14 dígitos.');
+  END IF;
+END;
+/
+
+
+TESTES......
+
+INSERT INTO paciente (pacienteid, nomepaciente, cpf, datanascimento, genero, endereco, contato)
+VALUES (1, 'João Lira', '123.789.157-01', TO_DATE('1990-05-15', 'yyyy-mm-dd'), 'Masculino', 'Rua A, 123', '(11) 1234-5678');
+
+
+-------------------------------
+
+GERENCIAMENTO DE SENHA
+
+CREATE OR REPLACE FUNCTION verifica_senha(senha IN VARCHAR2) RETURN BOOLEAN IS
+BEGIN
+ 
+  IF LENGTH(senha) < 8 THEN
+    RETURN FALSE;
+  END IF;
+
+  
+  FOR i IN 1..LENGTH(senha) LOOP
+    IF ASCII(SUBSTR(senha, i, 1)) BETWEEN ASCII('A') AND ASCII('Z') THEN
+     
+      FOR j IN 1..LENGTH(senha) LOOP
+        IF ASCII(SUBSTR(senha, j, 1)) BETWEEN ASCII('0') AND ASCII('9') THEN
+          
+          FOR k IN 1..LENGTH(senha) LOOP
+            IF REGEXP_LIKE(SUBSTR(senha, k, 1), '[!@#$%^&*()]') THEN
+              RETURN TRUE;
+            END IF;
+          END LOOP;
+        END IF;
+      END LOOP;
+    END IF;
+  END LOOP;
+
+  RETURN FALSE;
+END;
+/
+
+
+
+
+CREATE OR REPLACE TRIGGER senhausuario_check
+BEFORE INSERT OR UPDATE ON usuario
+FOR EACH ROW
+BEGIN
+  IF NOT verifica_senha(:new.senhausuario) THEN
+    RAISE_APPLICATION_ERROR(-20001, 'A senha não atende aos critérios.');
+  END IF;
+END;
+/
+
+TESTES.......
+
+-- Inserir um usuário com senha válida
+INSERT INTO usuario (nomeusuario, senhausuario, emailusuario) VALUES ('Claudio da Silva', 'Senha@123', 'claudio@claudio.com');
+
+-- Inserir um usuário com senha inválida
+INSERT INTO usuario (nomeusuario, senhausuario, emailusuario) VALUES ('Claudio da Silva', '123456', 'claudio@claudio.com');
+
+
+---------------------------------------
+
+MONITORAMENTO E AUDITORIA
+
+
+
+CREATE TABLE auditoria (
+  id NUMBER PRIMARY KEY,
+  data_hora TIMESTAMP,
+  usuario VARCHAR2(50),
+  acao VARCHAR2(200)
+);
+
+
+CREATE SEQUENCE auditoria_seq START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE PROCEDURE registrar_auditoria(
+  p_usuario VARCHAR2,
+  p_acao VARCHAR2
+) IS
+BEGIN
+  INSERT INTO auditoria (id, data_hora, usuario, acao)
+  VALUES (auditoria_seq.nextval, SYSTIMESTAMP, p_usuario, p_acao);
+  COMMIT;
+END registrar_auditoria;
+
+
+TESTES.....
+
+
+BEGIN
+  registrar_auditoria('Claudio', 'Login no sistema');
+  
+  registrar_auditoria('Claudio', 'Alteração de dados de cliente');
+ 
+END;
+
+
+

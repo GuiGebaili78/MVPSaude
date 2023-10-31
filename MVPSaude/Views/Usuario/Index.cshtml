@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Fiap.Web.MVPSaude.Models.UsuarioModel>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Usuário</title>
+</head>
+<body>
+    <h1>Usuário</h1>
+    <p>
+        <!-- uso de TagHelpers para definir o Controller e a Action -->
+        <a asp-controller="Usuario" asp-action="Cadastrar">Novo Usuário</a>
+    </p>
+
+    <!-- Verifica se a chave "Mensagem" existe no TempData -->
+    @if (@TempData["Mensagem"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <!-- Imprime para o usuário a mensagem -->
+            @TempData["Mensagem"]
+        </div>
+    }
+
+
+    <table class="table" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Usuário</th>
+            <th>Senha</th>
+            <th>Email</th>
+           
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <label>@item.UsuarioId</label>
+                </td>
+                <td>
+                    <label>@item.NomeUsuario</label>
+                </td>
+                <td>
+                    <label>@item.SenhaUsuario</label>
+                </td>
+                <td>
+                    <label>@item.EmailUsuario</label>
+                </td>
+               
+                <td>
+
+                    <!-- asp-route-id é usado para informar o Id do Item selecionado. -->
+                    <a asp-controller="Usuario"
+                       asp-action="Editar"
+                       asp-route-id="@item.UsuarioId">Editar</a>
+
+                    <a asp-controller="Usuario"
+                       asp-action="Consultar"
+                       asp-route-id="@item.UsuarioId">Consultar</a>
+
+                    <a asp-controller="Usuario"
+                       asp-action="Excluir"
+                       asp-route-id="@item.UsuarioId">Excluir</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

@@ -1243,11 +1243,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Micro\\Downloads\\Atividade 2\\Atividade 2\\MVPSaude-main\\MVPSaude\\Fiap.Web.MVPSaude.csproj",
+      "projectUniqueName": "C:\\workspace\\Estudos\\C#\\MVPSaude\\MVPSaude-main\\MVPSaude\\Fiap.Web.MVPSaude.csproj",
       "projectName": "Fiap.Web.MVPSaude",
-      "projectPath": "C:\\Users\\Micro\\Downloads\\Atividade 2\\Atividade 2\\MVPSaude-main\\MVPSaude\\Fiap.Web.MVPSaude.csproj",
+      "projectPath": "C:\\workspace\\Estudos\\C#\\MVPSaude\\MVPSaude-main\\MVPSaude\\Fiap.Web.MVPSaude.csproj",
       "packagesPath": "C:\\Users\\Micro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Micro\\Downloads\\Atividade 2\\Atividade 2\\MVPSaude-main\\MVPSaude\\obj\\",
+      "outputPath": "C:\\workspace\\Estudos\\C#\\MVPSaude\\MVPSaude-main\\MVPSaude\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Micro\\AppData\\Roaming\\NuGet\\NuGet.Config",

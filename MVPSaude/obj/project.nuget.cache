@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z/gAG8hHETr/GgFj9oYtp+cyqnDsmPjPz88aKlNRdkcZPNf9IgRs97v19HS8JiyB8tIBfODJxMKodXDTOu18yw==",
+  "dgSpecHash": "E9Hh0ijSs735dI0SlTkQKIaKIMbxYhmUOsOfElKsNMGCZTr0WQOQkp6cizwCSA0LIovxgvTYYhNiREHc8wyObA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Micro\\Downloads\\Atividade 2\\Atividade 2\\MVPSaude-main\\MVPSaude\\Fiap.Web.MVPSaude.csproj",
+  "projectFilePath": "C:\\workspace\\Estudos\\C#\\MVPSaude\\MVPSaude-main\\MVPSaude\\Fiap.Web.MVPSaude.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Micro\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.3\\microsoft.entityframeworkcore.7.0.3.nupkg.sha512",
     "C:\\Users\\Micro\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.3\\microsoft.entityframeworkcore.abstractions.7.0.3.nupkg.sha512",

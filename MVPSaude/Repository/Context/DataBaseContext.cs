@@ -15,6 +15,8 @@ namespace Fiap.Web.MVPSaude.Repository.Context
         // Propriedade que será responsável pelo acesso a tabela de Prontuários
         public DbSet<ProntuarioModel> Prontuario { get; set; }
 
+        // Propriedade que será responsável pelo acesso a tabela de Usuarios
+        public DbSet<UsuarioModel> Usuario { get; set; }
 
 
         public DataBaseContext(DbContextOptions options) : base(options)

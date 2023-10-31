@@ -1,0 +1,74 @@
+﻿@model Fiap.Web.MVPSaude.Models.UsuarioModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Usuário - Cadastrar</title>
+</head>
+<body>
+    <h1>Usuário - Cadastrar</h1>
+
+    <!-- formulário HTML com Tag Helpers-->
+    <form asp-action="Cadastrar" asp-controller="Usuario" method="post">
+        <div class="form-horizontal">
+            <hr />
+            <!-- Trecho de validação para se existe mensagem a ser exibida -->
+            @if (!Html.ViewData.ModelState.IsValid)
+            {
+                <!-- Tag para exibição da lista de erros -->
+                <div asp-validation-summary="All" class="alert alert-danger"></div>
+            }
+
+            @if (@TempData["Erro"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    <!-- Imprime para o usuário a mensagem -->
+                    @TempData["Erro"]
+                </div>
+            }
+
+            <div class="form-group">
+                <label asp-for="NomeUsuario" class="control-label"></label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="NomeUsuario" />
+                    <!-- Bloco para exibir mensagem de erro -->
+                    <span asp-validation-for="NomeUsuario" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="SenhaUsuario" class="control-label"></label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="SenhaUsuario" />
+                    <!-- Bloco para exibir mensagem de erro -->
+                    <span asp-validation-for="SenhaUsuario" class="text-danger"></span>
+                </div>
+            </div>
+
+        
+            <div class="form-group">
+                <label asp-for="EmailUsuario" class="control-label"></label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="EmailUsuario" />
+                    <!-- Bloco para exibir mensagem de erro -->
+                    <span asp-validation-for="EmailUsuario" class="text-danger"></span>
+                </div>
+            <hr />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <a asp-controller="Usuario" asp-action="Index" class="btn btn-warning">Voltar</a>
+                    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                </div>
+            </div>
+            <hr />
+        </div>
+    </form>
+
+</body>
+</html>
