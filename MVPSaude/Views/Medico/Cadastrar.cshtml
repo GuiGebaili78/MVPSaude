@@ -1,0 +1,78 @@
+﻿@model Fiap.Web.MVPSaude.Models.MedicoModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Médico - Cadastrar</title>
+</head>
+<body>
+    <h1>Médico - Cadastrar</h1>
+
+    <!-- formulário HTML com Tag Helpers-->
+    <form asp-action="Cadastrar" asp-controller="Medico" method="post">
+        <div class="form-horizontal">
+            <hr />
+            <!-- Trecho de validação para se existe mensagem a ser exibida -->
+            @if (!Html.ViewData.ModelState.IsValid)
+            {
+                <!-- Tag para exibição da lista de erros -->
+                <div asp-validation-summary="All" class="alert alert-danger"></div>
+            }
+
+            <div class="form-group">
+                <label asp-for="NomeMedico" class="control-label"></label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="NomeMedico" />
+                    <!-- Bloco para exibir mensagem de erro -->
+                    <span asp-validation-for="NomeMedico" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label asp-for="Crm" class="control-label"></label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="Crm" />
+                    <!-- Bloco para exibir mensagem de erro -->
+                    <span asp-validation-for="Crm" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Especialidade" class="control-label"></label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="Especialidade" />
+                    <!-- Bloco para exibir mensagem de erro -->
+                    <span asp-validation-for="Especialidade" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Contato" class="control-label"></label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="Contato" />
+                    <!-- Bloco para exibir mensagem de erro -->
+                    <span asp-validation-for="Contato" class="text-danger"></span>
+                </div>
+            </div>
+                      
+           
+            <hr />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <a asp-controller="Medico" asp-action="Index" class="btn btn-warning">Voltar</a>
+                    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                </div>
+            </div>
+            <hr />
+        </div>
+    </form>
+
+</body>
+</html>

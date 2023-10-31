@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Fiap.Web.MVPSaude.Models.ProntuarioModel>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Prontuário</title>
+</head>
+<body>
+    <h1>Prontuário</h1>
+    <p>
+        <!-- Uso de TagHelpers para definir o Controller e a Action -->
+        <a asp-controller="Prontuario" asp-action="Cadastrar">Novo Prontuário</a>
+    </p>
+
+    <!-- Verifica se a chave "Mensagem" existe no TempData -->
+    @if (TempData["Mensagem"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <!-- Imprime para o usuário a mensagem -->
+            @TempData["Mensagem"]
+        </div>
+    }
+
+    <table class="table" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Paciente</th>
+            <th>Histórico Paciente</th>
+            <th>Medicamentos</th>
+            <th>Triagem</th>
+            <th>Histórico Familiar</th>
+            <th>Exames</th>
+            <th>Data</th>
+            <th>Médico Responsável</th>
+            
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProntuarioId</td>
+                <td>@item.Paciente.NomePaciente</td>
+                <td>@item.HistPaciente</td>
+                <td>@item.Medicamento</td>
+                <td>@item.Triagem</td>
+                <td>@item.HistFamiliar</td>
+                <td>@item.Exames</td>
+                <td>@item.DataProntuario</td>
+                <td>@item.Medico.NomeMedico</td>
+                <td>
+                    <!-- asp-route-id é usado para informar o Id do Item selecionado. -->
+                    <a asp-controller="Prontuario" asp-action="Editar" asp-route-id="@item.ProntuarioId">Editar</a>
+                    <a asp-controller="Prontuario" asp-action="Consultar" asp-route-id="@item.ProntuarioId">Consultar</a>
+                    <a asp-controller="Prontuario" asp-action="Excluir" asp-route-id="@item.ProntuarioId">Excluir</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Fiap.Web.MVPSaude.Models.MedicoModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Médico - Consultar</title>
+</head>
+<body>
+    <h1>Médico - Consultar</h1>
+
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            <label><b>Id</b></label>
+            <div class="col-md-10">
+                <span>@Model.MedicoId</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label><b>Nome</b></label>
+            <div class="col-md-10">
+                <span>@Model.NomeMedico</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2"><b>Crm</b></label>
+            <div class="col-md-10">
+                <span>@Model.Crm</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label><b>Especialidade</b></label>
+            <div class="col-md-10">
+                <span>@Model.Especialidade</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label><b>Contato</b></label>
+            <div class="col-md-10">
+                <span>@Model.Contato</span>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <a asp-controller="Medico" asp-action="Index" class="btn btn-warning">Voltar</a>
+            </div>
+        </div>
+        <hr />
+    </div>
+
+</body>
+</html>

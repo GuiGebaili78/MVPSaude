@@ -1,0 +1,98 @@
+﻿@model Fiap.Web.MVPSaude.Models.ProntuarioModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Prontuário - Editar</title>
+</head>
+<body>
+    <h1>Prontuário - Editar</h1>
+
+    <!-- formulário HTML com Tag Helpers-->
+    <form asp-action="Editar" asp-controller="Prontuario" method="post">
+
+        <!-- Campo oculto para guardar qual Id (chave) do registro alterado -->
+        <input type="hidden" asp-for="ProntuarioId" />
+        <div class="form-horizontal">
+            <hr />
+
+            <div class="form-group">
+                <label>Paciente:</label>
+                <select asp-for="PacienteId" asp-items="@ViewBag.pacientes" class="form-control col-2">
+                    <option value="">Selecione</option>
+                </select>
+                <span class="text-danger" asp-validation-for="PacienteId"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Histórico Paciente:</label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="HistPaciente" />
+                </div>
+            </div>
+
+            
+
+            <div class="form-group">
+                <label>Medicamentos:</label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="Medicamento" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Triagem:</label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="Triagem" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Histórico Familiar:</label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="HistFamiliar" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Exames:</label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="Exames" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Data Prontuário:</label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="DataProntuario" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Médico:</label>
+                <select asp-for="MedicoId" asp-items="@ViewBag.medicos" class="form-control col-2">
+                    <option value="">Selecione</option>
+                </select>
+                <span class="text-danger" asp-validation-for="MedicoId"></span>
+            </div>
+            <hr />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <a asp-controller="Prontuario" asp-action="Index" class="btn btn-warning">Voltar</a>
+                    <input type="submit" value="Gravar" class="btn btn-primary" />
+                </div>
+            </div>
+            <hr />
+        </div>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Fiap.Web.MVPSaude.Models.PacienteModel>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Pacientes</title>
+</head>
+<body>
+    <h1>Pacientes</h1>
+    <p>
+        <!-- uso de TagHelpers para definir o Controller e a Action -->
+        <a asp-controller="Paciente" asp-action="Cadastrar">Novo Paciente</a>
+    </p>
+
+    <!-- Verifica se a chave "Mensagem" existe no TempData -->
+    @if (@TempData["Mensagem"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <!-- Imprime para o usuário a mensagem -->
+            @TempData["Mensagem"]
+        </div>
+    }
+
+
+    <table class="table" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Data de Nascimento</th>
+            <th>Gênero</th>
+            <th>Contato</th>
+            
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <label>@item.PacienteId</label>
+                </td>
+                <td>
+                    <label>@item.NomePaciente</label>
+                </td>
+                <td>
+                    <label>@item.Cpf</label>
+                </td>
+                <td>
+                    <label>@item.DataNascimento</label>
+                </td>
+                <td>
+                    <label>@item.Genero</label>
+                </td>
+                <td>
+                    <label>@item.Contato</label>
+                </td>
+                <td>
+
+                    <!-- asp-route-id é usado para informar o Id do Item selecionado. -->
+                    <a asp-controller="Paciente"
+                       asp-action="Editar"
+                       asp-route-id="@item.PacienteId">Editar</a>
+
+                    <a asp-controller="Paciente"
+                       asp-action="Consultar"
+                       asp-route-id="@item.PacienteId">Consultar</a>
+
+                    <a asp-controller="Paciente"
+                       asp-action="Excluir"
+                       asp-route-id="@item.PacienteId">Excluir</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
