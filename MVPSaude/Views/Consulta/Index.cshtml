@@ -1,16 +1,16 @@
-﻿@model IEnumerable<Fiap.Web.MVPSaude.Models.PacienteModel>
+﻿@model IEnumerable<Fiap.Web.MVPSaude.Models.ConsultaModel>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Pacientes</title>
+    <title>Consulta</title>
 </head>
 <body>
-    <h1>Pacientes</h1>
+    <h1>Consultas</h1>
     <p>
         <!-- uso de TagHelpers para definir o Controller e a Action -->
-        <a asp-controller="Paciente" asp-action="Cadastrar">Novo Paciente</a>
+        <a asp-controller="Consulta" asp-action="Cadastrar">Nova Consulta</a>
     </p>
 
     <!-- Verifica se a chave "Mensagem" existe no TempData -->
@@ -26,12 +26,12 @@
     <table class="table" border="1">
         <tr>
             <th>Id</th>
-            <th>Nome</th>
-            <th>CPF</th>
-            <th>Data de Nascimento</th>
-            <th>Gênero</th>
-            <th>Contato</th>
-            <th>Email</th>
+            <th>Paciente</th>
+            <th>Médico</th>
+            <th>Data da Consulta</th>
+            <th>Hora da Consulta</th>
+            <th>Local da Consulta</th>
+            <th>Mensagem</th>
 
         </tr>
 
@@ -39,40 +39,40 @@
         {
             <tr>
                 <td>
+                    <label>@item.ConsultaId</label>
+                </td>
+                <td>
                     <label>@item.PacienteId</label>
                 </td>
                 <td>
-                    <label>@item.NomePaciente</label>
+                    <label>@item.MedicoId</label>
                 </td>
                 <td>
-                    <label>@item.Cpf</label>
+                    <label>@item.DataConsulta</label>
                 </td>
                 <td>
-                    <label>@item.DataNascimento</label>
+                    <label>@item.HoraConsulta</label>
                 </td>
                 <td>
-                    <label>@item.Genero</label>
+                    <label>@item.Local</label>
                 </td>
                 <td>
-                    <label>@item.Contato</label>
-                </td>
-                <td>
-                    <label>@item.Email</label>
+                    <label>@item.Mensagem</label>
                 </td>
                 <td>
 
                     <!-- asp-route-id é usado para informar o Id do Item selecionado. -->
-                    <a asp-controller="Paciente"
+                    <a asp-controller="Consulta"
                        asp-action="Editar"
-                       asp-route-id="@item.PacienteId">Editar</a>
+                       asp-route-id="@item.ConsultaId">Editar</a>
 
-                    <a asp-controller="Paciente"
+                    <a asp-controller="Consulta"
                        asp-action="Consultar"
-                       asp-route-id="@item.PacienteId">Consultar</a>
+                       asp-route-id="@item.ConsultaId">Consultar</a>
 
-                    <a asp-controller="Paciente"
+                    <a asp-controller="Consulta"
                        asp-action="Excluir"
-                       asp-route-id="@item.PacienteId">Excluir</a>
+                       asp-route-id="@item.ConsultaId">Excluir</a>
                 </td>
             </tr>
         }

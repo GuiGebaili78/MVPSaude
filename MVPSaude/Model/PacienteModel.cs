@@ -54,22 +54,21 @@ namespace Fiap.Web.MVPSaude.Models
         [Display(Name = "Contato")]
         public string? Contato { get; set; }
 
-
-       
-
-
+        [Column("EMAILPACIENTE")]
+        [StringLength(255,
+        MinimumLength = 1,
+        ErrorMessage = "O email deve ter, no mínimo, 1 e, no máximo, 255 caracteres")]
+        [Display(Name = "Email")]
+        public string? Email { get; set; }
 
         public PacienteModel()
         {
-
         }
 
-        public PacienteModel(int pacienteId, string nomePaciente)
+        public PacienteModel(int pacienteId, string? nomePaciente)
         {
             PacienteId = pacienteId;
             NomePaciente = nomePaciente;
         }
-
-       
     }
 }
