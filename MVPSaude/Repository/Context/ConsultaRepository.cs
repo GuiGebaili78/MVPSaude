@@ -53,7 +53,7 @@ namespace Fiap.Web.MVPSaude.Repository.Context
 
         public void Excluir(int id)
         {
-            var consulta = new ConsultaModel(id, "");
+            var consulta = new ConsultaModel { ConsultaId = id };
 
             dataBaseContext.Consulta.Remove(consulta);
 

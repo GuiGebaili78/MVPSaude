@@ -29,18 +29,20 @@ namespace Fiap.Web.MVPSaude.Models
         [Column("DATACONSULTA")]
         public DateTime DataConsulta { get; set; }
 
-        [Display(Name = "Hora da Consulta")]
-        [Required(ErrorMessage = "Hora da consulta é obrigatória")]
-        [DataType(DataType.Time, ErrorMessage = "Hora da consulta inválida")]
         [Column("HORACONSULTA")]
-        public DateTime HoraConsulta { get; set; }
+        [StringLength(30,
+         MinimumLength = 1,
+         ErrorMessage = "A hora da consulta deve ter, no mínimo, 1 e, no máximo, 30 caracteres")]
+        [Display(Name = "Hora")]
+        public string? HoraConsulta { get; set; }
 
-        [Column("LOCAL")]
+
+        [Column("LOCALCONSULTA")]
         [StringLength(255,
           MinimumLength = 1,
-          ErrorMessage = "O endereço deve ter, no mínimo, 1 e, no máximo, 255 caracteres")]
-        [Display(Name = "Local")]
-        public string? Local { get; set; }
+          ErrorMessage = "O endereço deve ter, no mínimo, 1 e, no máximo, 30 caracteres")]
+        [Display(Name = "Local Consulta")]
+        public string? LocalConsulta { get; set; }
 
         [Column("MENSAGEM")]
         [StringLength(4000,
@@ -48,23 +50,22 @@ namespace Fiap.Web.MVPSaude.Models
           ErrorMessage = "A mensagem deve ter, no mínimo, 1 e, no máximo, 4000 caracteres")]
         [Display(Name = "Mensagem")]
         public string? Mensagem { get; set; }
-        public int Id { get; }
-        public string V { get; }
 
         public ConsultaModel()
         {
         }
 
-        public ConsultaModel(int consultaId, PacienteModel? paciente)
+        public ConsultaModel(int consultaId, int pacienteId, PacienteModel? paciente, int medicoId, MedicoModel? medico, DateTime dataConsulta, string? horaConsulta, string? localConsulta, string? mensagem)
         {
             ConsultaId = consultaId;
+            PacienteId = pacienteId;
             Paciente = paciente;
-        }
-
-        public ConsultaModel(int id, string v)
-        {
-            Id = id;
-            V = v;
+            MedicoId = medicoId;
+            Medico = medico;
+            DataConsulta = dataConsulta;
+            HoraConsulta = horaConsulta;
+            LocalConsulta = localConsulta;
+            Mensagem = mensagem;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Fiap.Web.MVPSaude.Controllers
         [LogFilter]
         public IActionResult Index()
         {
-            // Retornando para View a lista de Pacientes
+            // Retornando para View a lista de Consulta
             var lista = consultaRepository.Listar();
 
             return View(lista);

@@ -1,5 +1,80 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Fiap.Web.MVPSaude.Models.ConsultaModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Consulta - Editar</title>
+</head>
+<body>
+    <h1>Consulta - Editar</h1>
+
+    <!-- formulário HTML com Tag Helpers-->
+    <form asp-action="Editar" asp-controller="Consulta" method="post">
+
+        <!-- Campo oculto para guardar qual Id (chave) do registro alterado -->
+        <input type="hidden" asp-for="ConsultaId" />
+        <div class="form-horizontal">
+            <hr />
+
+            <div class="form-group">
+                <label>Paciente::</label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="PacienteId" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Médico:</label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="MedicoId" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Data Consulta:</label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="DataConsulta" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Hora Consulta:</label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="HoraConsulta" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Local:</label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="LocalConsulta" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Mensagem:</label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="Mensagem" />
+                </div>
+            
+            <hr />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <a asp-controller="Consulta" asp-action="Index" class="btn btn-warning">Voltar</a>
+                    <input type="submit" value="Gravar" class="btn btn-primary" />
+                </div>
+            </div>
+            <hr />
+        </div>
+    </form>
+
+</body>
+</html>

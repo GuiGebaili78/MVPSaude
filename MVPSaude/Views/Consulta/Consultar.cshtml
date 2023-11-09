@@ -1,5 +1,73 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Fiap.Web.MVPSaude.Models.ConsultaModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Consulta - Consultar</title>
+</head>
+<body>
+    <h1>Consulta - Consultar</h1>
+
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            <label><b>Id</b></label>
+            <div class="col-md-10">
+                <span>@Model.ConsultaId</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label><b>Paciente:</b></label>
+            <div class="col-md-10">
+                <span>@Model.PacienteId</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-2"><b>Médico:</b></label>
+            <div class="col-md-10">
+                <span>@Model.MedicoId</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Data Consulta:</label>
+            <div class="col-md-10">
+                <!-- Caixa de Texto -->
+                <input asp-for="DataConsulta" /> (MM/DD/AAAA)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label><b>Hora Consulta:</b></label>
+            <div class="col-md-10">
+                <span>@Model.HoraConsulta</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label><b>Local:</b></label>
+            <div class="col-md-10">
+                <span>@Model.LocalConsulta</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label><b>Mensagem:</b></label>
+            <div class="col-md-10">
+                <span>@Model.Mensagem</span>
+            </div>
+       
+        <hr />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <a asp-controller="Consulta" asp-action="Index" class="btn btn-warning">Voltar</a>
+            </div>
+        </div>
+        <hr />
+    </div>
+
+</body>
+</html>
