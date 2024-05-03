@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Fiap.Web.MVPSaude.Models;
 
 namespace Fiap.Web.MVPSaude.Models
 {
@@ -26,7 +27,6 @@ namespace Fiap.Web.MVPSaude.Models
         [Display(Name = "CRM")]
         public string? Crm { get; set; }
 
-       
         [Column("ESPECIALIDADE")]
         [Required(ErrorMessage = "Especialidade é obrigatório!")]
         [StringLength(100,
@@ -35,7 +35,6 @@ namespace Fiap.Web.MVPSaude.Models
         [Display(Name = "Especialidade")]
         public string? Especialidade { get; set; }
 
-       
         [Column("CONTATO")]
         [StringLength(200,
           MinimumLength = 1,
@@ -43,20 +42,17 @@ namespace Fiap.Web.MVPSaude.Models
         [Display(Name = "Contato")]
         public string? Contato { get; set; }
 
-
-
-
-
-
         public MedicoModel()
         {
-
         }
 
-        public MedicoModel(int medicoId, string? nomeMedico)
+        public MedicoModel(int medicoId, string? nomeMedico, string? crm, string? especialidade, string? contato)
         {
             MedicoId = medicoId;
             NomeMedico = nomeMedico;
+            Crm = crm;
+            Especialidade = especialidade;
+            Contato = contato;
         }
     }
 }

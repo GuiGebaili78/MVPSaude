@@ -10,7 +10,7 @@ namespace Fiap.Web.MVPSaude.Controllers
     public class MedicoController : Controller
     {
 
-        private MedicoRepository medicoRepository;
+        private readonly MedicoRepository medicoRepository;
 
         // O parametro enviado no construtor do Controller é gerenciado pelo próprio framework .NET
         // Esse recurso é chamada de Injeção de Dependência

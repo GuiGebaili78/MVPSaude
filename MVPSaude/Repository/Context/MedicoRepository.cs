@@ -16,21 +16,18 @@ namespace Fiap.Web.MVPSaude.Repository.Context
 
         public IList<MedicoModel> Listar()
         {
-            var lista = new List<MedicoModel>();
-
             // Efetuando a listagem (Substituindo o Select *)
-            lista = dataBaseContext.Medico.ToList();
+            var lista = dataBaseContext.Medico.ToList();
 
             return lista;
         }
 
-        public MedicoModel Consultar(int id)
+        public MedicoModel? Consultar(int id)
         {
-            // Recuperando o objeto Médico de um determinado Id
             var medico = dataBaseContext.Medico.Find(id);
-
             return medico;
         }
+
 
         public void Inserir(MedicoModel medico)
         {
@@ -52,14 +49,15 @@ namespace Fiap.Web.MVPSaude.Repository.Context
 
         public void Excluir(int id)
         {
-            var medico = new MedicoModel(id, "");
+            var medico = dataBaseContext.Medico.Find(id);
 
-            dataBaseContext.Medico.Remove(medico);
-
-            // Salva as alterações
-            dataBaseContext.SaveChanges();
-
+            if (medico != null)
+            {
+                dataBaseContext.Medico.Remove(medico);
+                dataBaseContext.SaveChanges();
+            }
         }
+
 
 
     }

@@ -2,7 +2,8 @@
 using Fiap.Web.MVPSaude.Models;
 using Fiap.Web.MVPSaude.Repository.Context;
 using Microsoft.AspNetCore.Mvc;
-using Oracle.ManagedDataAccess.Client;
+
+
 
 namespace Fiap.Web.MVPSaude.Controllers
 {
@@ -22,7 +23,7 @@ namespace Fiap.Web.MVPSaude.Controllers
         [LogFilter]
         public IActionResult Index()
         {
-            // Retornando para View a lista de Usuários
+            // Retornando para View a lista de Usuarios
             var lista = usuarioRepository.Listar();
 
             return View(lista);
@@ -41,29 +42,19 @@ namespace Fiap.Web.MVPSaude.Controllers
         [HttpPost]
         public IActionResult Cadastrar(UsuarioModel usuario)
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    usuarioRepository.Inserir(usuario);
 
-                    TempData["mensagem"] = "Usuário cadastrado com sucesso";
-                    return RedirectToAction("Index", "Usuario");
-                }
-                else
-                {
-                    return View(usuario);
-                }
+                usuarioRepository.Inserir(usuario);
+
+                TempData["mensagem"] = "Usuario cadastrado com sucesso";
+                return RedirectToAction("Index", "Usuario");
             }
-            catch (Exception ex)
+            else
             {
-                // Exiba a mensagem de erro para o usuário
-                TempData["erro"] = ex.Message;
                 return View(usuario);
             }
         }
-
-
 
 
         [HttpGet]
@@ -80,7 +71,7 @@ namespace Fiap.Web.MVPSaude.Controllers
             {
                 usuarioRepository.Alterar(usuario);
 
-                TempData["mensagem"] = "Usuário alterado com sucesso";
+                TempData["mensagem"] = "Usuario alterado com sucesso";
                 return RedirectToAction("Index", "Usuario");
             }
             else
@@ -103,7 +94,7 @@ namespace Fiap.Web.MVPSaude.Controllers
         {
             usuarioRepository.Excluir(id);
 
-            TempData["mensagem"] = "Usuário excluído com sucesso";
+            TempData["mensagem"] = "Usuario excluído com sucesso";
             return RedirectToAction("Index", "Usuario");
         }
 

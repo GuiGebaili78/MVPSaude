@@ -48,5 +48,9 @@ namespace Fiap.Web.MVPSaude.Models
             SenhaUsuario = senhaUsuario;
             EmailUsuario = email;
         }
+
+        public UsuarioModel(int id, string v)
+        {
+        }
     }
 }
