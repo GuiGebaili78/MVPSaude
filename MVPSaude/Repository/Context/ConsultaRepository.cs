@@ -17,12 +17,18 @@ namespace Fiap.Web.MVPSaude.Repository.Context
 
         public IList<ConsultaModel> Listar()
         {
-            var lista = new List<ConsultaModel>();
+
 
             // Efetuando a listagem (Substituindo o Select *)
-            lista = dataBaseContext.Consulta.ToList();
+            var lista = dataBaseContext.Consulta
+                .Include(p => p.Paciente)
+                .Include(p => p.Medico)
+                .ToList<ConsultaModel>();
+
 
             return lista;
+
+
         }
 
         public ConsultaModel Consultar(int id)

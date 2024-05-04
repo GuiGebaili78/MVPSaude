@@ -34,10 +34,9 @@
         </div>
 
         <div class="form-group">
-            <label>Data Nascimento:</label>
+            <label class="col-md-2"><b>Data de Nascimento</b></label>
             <div class="col-md-10">
-                <!-- Caixa de Texto -->
-                <input asp-for="DataNascimento" /> (MM/DD/AAAA)
+                <span>@Model.DataNascimento</span>
             </div>
         </div>
 
@@ -69,7 +68,7 @@
         <hr />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <a asp-controller="Paciente" asp-action="Index" class="btn btn-warning">Voltar</a>
+                <a class="button" asp-controller="Paciente" asp-action="Index" class="btn btn-warning">Voltar</a>
             </div>
         </div>
         <hr />

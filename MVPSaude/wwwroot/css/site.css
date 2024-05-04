@@ -1,3 +1,22 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 40px;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -20,19 +39,44 @@ body {
 }
 
 .navbar {
-    background-color: #fff; /* Cor de fundo da barra de navegação */
+    background-color: #5E7B80; /* Cor de fundo da barra de navegação */
 }
 
 .container {
     padding-top: 20px; /* Espaçamento acima do conteúdo */
     margin-bottom: 60px; /* Altura do footer */
+    
 }
 
 footer.footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #f8f9fa; /* Cor de fundo do footer */
+    background-color: #fff; /* Cor de fundo do footer */
     padding: 10px 0; /* Espaçamento interno do footer */
     text-align: center;
 }
+
+a.button {
+    display: inline-block;
+    padding: 5px 10px; /* Ajuste conforme necessário */
+    background-color: #9AC0D5; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    border: none;
+    border-radius: 5px; /* Borda arredondada */
+    text-decoration: none; /* Remova sublinhado */
+    cursor: pointer; /* Mude o cursor ao passar por cima */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+    /* Estilo para links que parecem botões quando hover */
+    a.button:hover {
+        background-color: #8FD7FF; /* Cor de fundo mais escura ao passar o mouse */
+    }
+
+table {
+    width: 100%;
+    table-layout: auto;
+}
+
+

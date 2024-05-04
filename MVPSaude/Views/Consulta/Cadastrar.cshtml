@@ -23,31 +23,27 @@
             }
 
             <div class="form-group">
-                <label asp-for="PacienteId" class="control-label"></label>
-                <div class="col-md-10">
-                    <!-- Caixa de Texto -->
-                    <input asp-for="PacienteId" />
-                    <!-- Bloco para exibir mensagem de erro -->
-                    <span asp-validation-for="PacienteId" class="text-danger"></span>
-                </div>
+                <label>Paciente:</label>
+                <select asp-for="PacienteId" asp-items="@ViewBag.pacientes" class="form-control col-2">
+                    <option value="">Selecione</option>
+                </select>
+                <span class="text-danger" asp-validation-for="PacienteId"></span>
             </div>
 
 
             <div class="form-group">
-                <label asp-for="MedicoId" class="control-label"></label>
-                <div class="col-md-10">
-                    <!-- Caixa de Texto -->
-                    <input asp-for="MedicoId" />
-                    <!-- Bloco para exibir mensagem de erro -->
-                    <span asp-validation-for="MedicoId" class="text-danger"></span>
-                </div>
+                <label>Médico:</label>
+                <select asp-for="MedicoId" asp-items="@ViewBag.medicos" class="form-control col-2">
+                    <option value="">Selecione</option>
+                </select>
+                <span class="text-danger" asp-validation-for="MedicoId"></span>
             </div>
 
             <div class="form-group">
                 <label>Data Consulta:</label>
                 <div class="col-md-10">
                     <!-- Caixa de Texto -->
-                    <input asp-for="DataConsulta" /> (MM/DD/AAAA)
+                    <input asp-for="DataConsulta" /> 
                 </div>
             </div>
 
@@ -83,7 +79,7 @@
                 <hr />
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <a asp-controller="Consulta" asp-action="Index" class="btn btn-warning">Voltar</a>
+                        <a class="button" asp-controller="Consulta" asp-action="Index" class="btn btn-warning">Voltar</a>
                         <input type="submit" value="Cadastrar" class="btn btn-primary" />
                     </div>
                 </div>

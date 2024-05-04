@@ -10,7 +10,7 @@
     <h1>Prontuário</h1>
     <p>
         <!-- Uso de TagHelpers para definir o Controller e a Action -->
-        <a asp-controller="Prontuario" asp-action="Cadastrar">Novo Prontuário</a>
+        <a class="button" asp-controller="Prontuario" asp-action="Cadastrar">Novo Prontuário</a>
     </p>
 
     <!-- Verifica se a chave "Mensagem" existe no TempData -->
@@ -50,9 +50,17 @@
                 <td>@item.Medico.NomeMedico</td>
                 <td>
                     <!-- asp-route-id é usado para informar o Id do Item selecionado. -->
-                    <a asp-controller="Prontuario" asp-action="Editar" asp-route-id="@item.ProntuarioId">Editar</a>
-                    <a asp-controller="Prontuario" asp-action="Consultar" asp-route-id="@item.ProntuarioId">Consultar</a>
-                    <a asp-controller="Prontuario" asp-action="Excluir" asp-route-id="@item.ProntuarioId">Excluir</a>
+                    <a class="button" asp-controller="Prontuario"
+                       asp-action="Editar"
+                       asp-route-id="@item.ProntuarioId">Editar</a>
+
+                    <a class="button" asp-controller="Prontuario"
+                       asp-action="Consultar"
+                       asp-route-id="@item.ProntuarioId">Consultar</a>
+
+                    <a class="button" asp-controller="Prontuario"
+                       asp-action="Excluir"
+                       asp-route-id="@item.ProntuarioId">Excluir</a>
                 </td>
             </tr>
         }

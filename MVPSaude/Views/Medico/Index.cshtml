@@ -10,7 +10,7 @@
     <h1>Médicos</h1>
     <p>
         <!-- uso de TagHelpers para definir o Controller e a Action -->
-        <a asp-controller="Medico" asp-action="Cadastrar">Novo Médico</a>
+        <a class="button" asp-controller="Medico" asp-action="Cadastrar">Novo Médico</a>
     </p>
 
     <!-- Verifica se a chave "Mensagem" existe no TempData -->
@@ -55,15 +55,15 @@
                 <td>
 
                     <!-- asp-route-id é usado para informar o Id do Item selecionado. -->
-                    <a asp-controller="Medico"
+                    <a class="button" asp-controller="Medico"
                        asp-action="Editar"
                        asp-route-id="@item.MedicoId">Editar</a>
 
-                    <a asp-controller="Medico"
+                    <a class="button" asp-controller="Medico"
                        asp-action="Consultar"
                        asp-route-id="@item.MedicoId">Consultar</a>
 
-                    <a asp-controller="Medico"
+                    <a class="button" asp-controller="Medico"
                        asp-action="Excluir"
                        asp-route-id="@item.MedicoId">Excluir</a>
                 </td>

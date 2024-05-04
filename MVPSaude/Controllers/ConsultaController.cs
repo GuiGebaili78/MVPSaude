@@ -2,8 +2,7 @@
 using Fiap.Web.MVPSaude.Models;
 using Fiap.Web.MVPSaude.Repository.Context;
 using Microsoft.AspNetCore.Mvc;
-
-
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Fiap.Web.MVPSaude.Controllers
 {
@@ -11,6 +10,8 @@ namespace Fiap.Web.MVPSaude.Controllers
     {
 
         private ConsultaRepository consultaRepository;
+        private PacienteRepository pacienteRepository;
+        private MedicoRepository medicoRepository;
 
         // O parametro enviado no construtor do Controller é gerenciado pelo próprio framework .NET
         // Esse recurso é chamada de Injeção de Dependência
@@ -18,12 +19,14 @@ namespace Fiap.Web.MVPSaude.Controllers
         {
 
             consultaRepository = new ConsultaRepository(dataBaseContext);
+            medicoRepository = new MedicoRepository(dataBaseContext);
+            pacienteRepository = new PacienteRepository(dataBaseContext);
         }
 
         [LogFilter]
         public IActionResult Index()
         {
-            // Retornando para View a lista de Consulta
+            // Retornando para View a lista de Médicos
             var lista = consultaRepository.Listar();
 
             return View(lista);
@@ -35,23 +38,29 @@ namespace Fiap.Web.MVPSaude.Controllers
         {
             // Retorna para a View Cadastrar um 
             // objeto modelo com as propriedades em branco 
+            ComboPacientes();
+            ComboMedicos();
+
             return View(new ConsultaModel());
         }
 
         // Anotação de uso do Verb HTTP Post
         [HttpPost]
-        public IActionResult Cadastrar(ConsultaModel consulta)
+        public IActionResult Cadastrar(ConsultaModel consulta
+            )
         {
             if (ModelState.IsValid)
             {
 
                 consultaRepository.Inserir(consulta);
 
-                TempData["mensagem"] = "Consulta cadastrada com sucesso";
+                TempData["mensagem"] = "Consulta cadastrado com sucesso";
                 return RedirectToAction("Index", "Consulta");
             }
             else
             {
+                ComboPacientes();
+                ComboMedicos();
                 return View(consulta);
             }
         }
@@ -61,6 +70,8 @@ namespace Fiap.Web.MVPSaude.Controllers
         public IActionResult Editar([FromRoute] int id)
         {
             var consulta = consultaRepository.Consultar(id);
+            ComboPacientes();
+            ComboMedicos();
             return View(consulta);
         }
 
@@ -71,11 +82,13 @@ namespace Fiap.Web.MVPSaude.Controllers
             {
                 consultaRepository.Alterar(consulta);
 
-                TempData["mensagem"] = "Consulta alterada com sucesso";
+                TempData["mensagem"] = "Prontuário alterado com sucesso";
                 return RedirectToAction("Index", "Consulta");
             }
             else
             {
+                ComboPacientes();
+                ComboMedicos();
                 return View(consulta);
             }
 
@@ -86,6 +99,8 @@ namespace Fiap.Web.MVPSaude.Controllers
         public IActionResult Consultar(int id)
         {
             var consulta = consultaRepository.Consultar(id);
+            ComboPacientes();
+            ComboMedicos();
             return View(consulta);
         }
 
@@ -96,6 +111,20 @@ namespace Fiap.Web.MVPSaude.Controllers
 
             TempData["mensagem"] = "Consulta excluída com sucesso";
             return RedirectToAction("Index", "Consulta");
+        }
+
+        private void ComboPacientes()
+        {
+            var listaPacientes = pacienteRepository.Listar();
+            var selectListPacientes = new SelectList(listaPacientes, "PacienteId", "NomePaciente");
+            ViewBag.pacientes = selectListPacientes;
+        }
+
+        private void ComboMedicos()
+        {
+            var listaMedicos = medicoRepository.Listar();
+            var selectListMedicos = new SelectList(listaMedicos, "MedicoId", "NomeMedico");
+            ViewBag.medicos = selectListMedicos;
         }
 
 
