@@ -1,0 +1,57 @@
+﻿@model Fiap.Web.MVPSaude.Models.UsuarioModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Usuário - Editar</title>
+</head>
+<body>
+    <h1>Usuário - Editar</h1>
+
+    <!-- formulário HTML com Tag Helpers-->
+    <form asp-action="Editar" asp-controller="Usuario" method="post">
+
+        <!-- Campo oculto para guardar qual Id (chave) do registro alterado -->
+        <input type="hidden" asp-for="UsuarioId" />
+        <div class="form-horizontal">
+            <hr />
+
+            <div class="form-group">
+                <label>Nome:</label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="NomeUsuario" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Cpf:</label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="SenhaUsuario" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Data Nascimento:</label>
+                <div class="col-md-10">
+                    <!-- Caixa de Texto -->
+                    <input asp-for="EmailUsuario" />
+                </div>
+            </div>            
+            
+            <hr />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <a asp-controller="Usuario" asp-action="Index" class="btn btn-warning">Voltar</a>
+                    <input type="submit" value="Gravar" class="btn btn-primary" />
+                </div>
+            </div>
+            <hr />
+        </div>
+    </form>
+
+</body>
+</html>

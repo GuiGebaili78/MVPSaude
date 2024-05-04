@@ -45,15 +45,7 @@
                     <input asp-for="SenhaUsuario" />
                     <!-- Bloco para exibir mensagem de erro -->
                     <span asp-validation-for="SenhaUsuario" class="text-danger"></span>
-
-                    <!-- Verifica se há uma mensagem de erro no TempData e a exibe -->
-                    @if (TempData["Erro"] != null)
-                    {
-                        <div class="alert alert-danger" role="alert">
-                            <!-- Imprime para o usuário a mensagem de erro -->
-                            @TempData["Erro"]
-                        </div>
-                    }
+                    
                 </div>
             </div>
 
