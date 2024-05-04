@@ -6,6 +6,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Consulta - Cadastrar</title>
+
 </head>
 <body>
     <h1>Consulta - Cadastrar</h1>
@@ -78,16 +79,16 @@
                     <!-- Bloco para exibir mensagem de erro -->
                     <span asp-validation-for="Mensagem" class="text-danger"></span>
                 </div>
-           
-            <hr />
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <a asp-controller="Consulta" asp-action="Index" class="btn btn-warning">Voltar</a>
-                    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+
+                <hr />
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <a asp-controller="Consulta" asp-action="Index" class="btn btn-warning">Voltar</a>
+                        <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                    </div>
                 </div>
+                <hr />
             </div>
-            <hr />
-        </div>
     </form>
 
 </body>

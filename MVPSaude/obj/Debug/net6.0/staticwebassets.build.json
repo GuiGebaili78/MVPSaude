@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "29m7EJ5+T6xRoIvzvfmKguA03zuqy0dPyBeqCVGfBuo=",
+  "Hash": "z9zcJice7DV/q/cg2rMAIfnMPAWH7K6HIng5SBDrdKM=",
   "Source": "Fiap.Web.MVPSaude",
   "BasePath": "_content/Fiap.Web.MVPSaude",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\workspace\\Estudos\\C#\\MVPSaude\\MVPSaude-main\\MVPSaude\\MVPSaude\\wwwroot\\Images\\Background MVP.png",
+      "SourceId": "Fiap.Web.MVPSaude",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\workspace\\Estudos\\C#\\MVPSaude\\MVPSaude-main\\MVPSaude\\MVPSaude\\wwwroot\\",
+      "BasePath": "_content/Fiap.Web.MVPSaude",
+      "RelativePath": "Images/Background MVP.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Background MVP.png"
     },
     {
       "Identity": "C:\\workspace\\Estudos\\C#\\MVPSaude\\MVPSaude-main\\MVPSaude\\MVPSaude\\wwwroot\\js\\site.js",

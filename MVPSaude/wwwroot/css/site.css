@@ -1,18 +1,38 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
-  margin-bottom: 60px;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background-image: url('../Images/Background MVP.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative; /* Defina o posicionamento relativo */
+}
+
+/* Sobreposição para aplicar opacidade */
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255, 0,18); /* Cor de fundo com opacidade */
+}
+
+.navbar {
+    background-color: #fff; /* Cor de fundo da barra de navegação */
+}
+
+.container {
+    padding-top: 20px; /* Espaçamento acima do conteúdo */
+    margin-bottom: 60px; /* Altura do footer */
+}
+
+footer.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa; /* Cor de fundo do footer */
+    padding: 10px 0; /* Espaçamento interno do footer */
+    text-align: center;
 }

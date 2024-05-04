@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Fiap.Web.MVPSaude.bundle.scp.css"
     },
     {
+      "Id": "C:\\workspace\\Estudos\\C#\\MVPSaude\\MVPSaude-main\\MVPSaude\\MVPSaude\\wwwroot\\Images\\Background MVP.png",
+      "PackagePath": "staticwebassets\\Images\\Background MVP.png"
+    },
+    {
       "Id": "C:\\workspace\\Estudos\\C#\\MVPSaude\\MVPSaude-main\\MVPSaude\\MVPSaude\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
