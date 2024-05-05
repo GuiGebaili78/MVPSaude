@@ -80,3 +80,15 @@ table {
 }
 
 
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2em;
+    color: #6873A5; /* Cor do texto */
+    text-transform: uppercase; /* Transforma todas as letras em maiúsculas */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra do texto */    
+    border-radius: 10px; /* Borda arredondada */
+    
+}
+
+   
+
