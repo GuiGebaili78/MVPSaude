@@ -1,6 +1,4 @@
 ﻿using Fiap.Web.MVPSaude.Models;
-using Microsoft.EntityFrameworkCore;
-
 namespace Fiap.Web.MVPSaude.Repository.Context
 {
     public class UsuarioRepository
@@ -12,8 +10,6 @@ namespace Fiap.Web.MVPSaude.Repository.Context
         {
             dataBaseContext = ctx;
         }
-
-
 
         public IList<UsuarioModel> Listar()
         {
@@ -40,7 +36,6 @@ namespace Fiap.Web.MVPSaude.Repository.Context
 
             // Salva as alterações
             dataBaseContext.SaveChanges();
-
         }
 
         public void Alterar(UsuarioModel usuario)
@@ -61,7 +56,6 @@ namespace Fiap.Web.MVPSaude.Repository.Context
             dataBaseContext.SaveChanges();
 
         }
-
 
     }
 }

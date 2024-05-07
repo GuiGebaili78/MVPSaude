@@ -1,5 +1,4 @@
 ﻿using Fiap.Web.MVPSaude.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace Fiap.Web.MVPSaude.Repository.Context
 {

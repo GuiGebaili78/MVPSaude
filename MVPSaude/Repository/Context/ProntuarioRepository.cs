@@ -14,7 +14,6 @@ namespace Fiap.Web.MVPSaude.Repository.Context
         }
 
 
-
         public IList<ProntuarioModel> Listar()
         {
             
@@ -25,9 +24,7 @@ namespace Fiap.Web.MVPSaude.Repository.Context
                 .Include(p => p.Medico)
                 .ToList<ProntuarioModel>();
 
-
             return lista;
-
                         
         }
 
@@ -46,7 +43,6 @@ namespace Fiap.Web.MVPSaude.Repository.Context
 
             // Salva as alterações
             dataBaseContext.SaveChanges();
-
         }
 
         public void Alterar(ProntuarioModel prontuario)

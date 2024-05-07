@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Fiap.Web.MVPSaude.Models; // Suponha que o namespace para sua entidade Usuario seja Fiap.Web.MVPSaude.Models
-using System.Linq;
 using Fiap.Web.MVPSaude.Repository.Context;
 
 namespace Fiap.Web.MVPSaude.Controllers

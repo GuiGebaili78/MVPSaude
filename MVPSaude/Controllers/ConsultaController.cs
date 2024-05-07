@@ -54,7 +54,7 @@ namespace Fiap.Web.MVPSaude.Controllers
 
                 consultaRepository.Inserir(consulta);
 
-                TempData["mensagem"] = "Consulta cadastrado com sucesso";
+                TempData["mensagem"] = "Consulta cadastrada com sucesso";
                 return RedirectToAction("Index", "Consulta");
             }
             else
@@ -82,7 +82,7 @@ namespace Fiap.Web.MVPSaude.Controllers
             {
                 consultaRepository.Alterar(consulta);
 
-                TempData["mensagem"] = "Prontuário alterado com sucesso";
+                TempData["mensagem"] = "Consulta alterada com sucesso";
                 return RedirectToAction("Index", "Consulta");
             }
             else
