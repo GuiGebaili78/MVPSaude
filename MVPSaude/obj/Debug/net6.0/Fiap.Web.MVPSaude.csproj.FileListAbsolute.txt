@@ -342,3 +342,5 @@ C:\workspace\Estudos\C#\MVPSaude\MVPSaude-main\MVPSaude\MVPSaude\obj\Debug\net6.
 C:\workspace\Estudos\C#\MVPSaude\MVPSaude-main\MVPSaude\MVPSaude\obj\Debug\net6.0\Fiap.Web.MVPSaude.pdb
 C:\workspace\Estudos\C#\MVPSaude\MVPSaude-main\MVPSaude\MVPSaude\obj\Debug\net6.0\Fiap.Web.MVPSaude.genruntimeconfig.cache
 C:\workspace\Estudos\C#\MVPSaude\MVPSaude-main\MVPSaude\MVPSaude\obj\Debug\net6.0\ref\Fiap.Web.MVPSaude.dll
+C:\workspace\Estudos\C#\MVPSaude\MVPSaude-main\MVPSaude\MVPSaude\bin\Debug\net6.0\MySqlConnector.dll
+C:\workspace\Estudos\C#\MVPSaude\MVPSaude-main\MVPSaude\MVPSaude\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll

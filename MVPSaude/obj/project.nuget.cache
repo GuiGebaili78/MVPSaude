@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kKOyW2GmIdpYcjv2/8kXDq+RNCeE2E+JHu849a87XaQGa070IVSPRl26aMWT55UZQE8cGcuaFIDkQsosGymkfw==",
+  "dgSpecHash": "Aj9wWiURRkASAtRqMilBRdtRrSsSKPifTlx+U4ZeJ/lUYikRwxepoFIR6eyi7w09skLsNMpvMAsoiVV/1NVcXA==",
   "success": true,
   "projectFilePath": "C:\\workspace\\Estudos\\C#\\MVPSaude\\MVPSaude-main\\MVPSaude\\MVPSaude\\Fiap.Web.MVPSaude.csproj",
   "expectedPackageFiles": [
@@ -23,8 +23,10 @@
     "C:\\Users\\Micro\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\Micro\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Micro\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Micro\\.nuget\\packages\\mysqlconnector\\2.2.5\\mysqlconnector.2.2.5.nupkg.sha512",
     "C:\\Users\\Micro\\.nuget\\packages\\oracle.entityframeworkcore\\7.21.11\\oracle.entityframeworkcore.7.21.11.nupkg.sha512",
     "C:\\Users\\Micro\\.nuget\\packages\\oracle.manageddataaccess.core\\3.21.110\\oracle.manageddataaccess.core.3.21.110.nupkg.sha512",
+    "C:\\Users\\Micro\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\7.0.0\\pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512",
     "C:\\Users\\Micro\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\Micro\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
     "C:\\Users\\Micro\\.nuget\\packages\\system.diagnostics.performancecounter\\6.0.1\\system.diagnostics.performancecounter.6.0.1.nupkg.sha512",
